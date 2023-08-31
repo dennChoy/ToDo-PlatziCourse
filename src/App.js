@@ -1,23 +1,38 @@
-import logo from './platzi.webp';
-import './App.css';
+import React from "react";
+import { ToDoCounter } from "./ToDoCounter";
+import { ToDoSearch } from "./ToDoSearch";
+import { ToDoList } from "./ToDoList";
+import { ToDoItem } from './ToDoItem';
+import { CreateToDoBtn } from "./CreateToDoBtn";
+
+
+const defaultTodos = [
+  {text: "Tarea uno", completed:true},
+  {text: "Tarea dos", completed:true},
+  {text: "Tarea tres", completed:false},
+  {text: "Tarea cuatro", completed: false}
+];
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edita el archivo <code>src/App.js</code> y guarda para recargar.
-        </p>
-        <a
-          className="App-link"
-          href="https://platzi.com/reactjs"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container p-3" id="container_body">
+      <div className="card m-3 p-5">
+        <ToDoCounter completed={16} total={25}/>
+        <ToDoSearch />
+        
+        <ToDoList>
+          {defaultTodos.map(todo => (
+            <ToDoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            />
+            ))}
+        </ToDoList>
+        <CreateToDoBtn/>
+        
+      </div>
     </div>
   );
 }
