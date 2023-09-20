@@ -1,10 +1,8 @@
 
 function ToDoList({children}){
     return(
-        <div className="container">
-            <div class="row>">
-                {children}
-            </div>
+        <div class="row d-flex justify-content-around" id="general-card">
+            {children}
         </div>
     );
 }
