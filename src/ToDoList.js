@@ -1,7 +1,7 @@
 
 function ToDoList({children}){
     return(
-        <div class="row d-flex justify-content-around" id="general-card">
+        <div className="row d-flex justify-content-around" id="general-card">
             {children}
         </div>
     );

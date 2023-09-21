@@ -1,6 +1,6 @@
-function CreateToDoBtn(){
+function CreateToDoBtn({handleShow}){
     return(
-        <button className="btn btn-primary"> Add To Do </button>
+        <button className="btn btn-primary" onClick={handleShow}> Add To Do </button>
     );
 }
 

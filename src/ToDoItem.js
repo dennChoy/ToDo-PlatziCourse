@@ -6,9 +6,15 @@ function ToDoItem(props){
                     {props.text} 
                 </div>
                 <div className="col-6 d-flex flex-row-reverse">
-                    <button className="btn btn-danger btn-sm mr-">X</button>
+                    <button 
+                        className="btn btn-danger btn-sm mr-"
+                        onClick={props.onDelete}
+                    >X</button>
                     {!props.completed &&
-                    <button className="btn btn-success btn-sm">V</button>
+                    <button 
+                        className="btn btn-success btn-sm"
+                        onClick={props.onComplete}
+                    >V</button>
                     }
                 </div>
                 
